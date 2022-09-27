@@ -1,0 +1,125 @@
+.home-hero
+    background-color: #000
+    &__pre-title
+        padding-top: 70px
+        margin-bottom: 30px
+    &__span-wrapper
+        background: rgba(255, 255, 255, 0.17)
+        border-radius: 30px
+        padding: 10px 15px
+    &__span-wrapper span
+        display: inline-block
+    &__pre-title--green
+        background: $green
+        text-transform: uppercase
+        border-radius: 30px
+        font-size: 10px
+        font-weight: 600
+        line-height: 18px
+        letter-spacing: 5px
+        margin-right: 15px
+        padding: 5px 15px
+    &__title
+        font-size: 200px
+        line-height: 220px
+        letter-spacing: -2px
+        font-weight: bold
+        position: relative
+        z-index: 1
+        opacity: 0
+        transition: 1s
+        animation: show 3s 1
+        animation-fill-mode: forwards
+        animation-delay: 0.5s
+    &__title::after
+        content: ' '
+        display: block
+        position: absolute
+        width: 594px
+        min-height: 703px
+        top: -20px
+        right: 0
+        background-image: url(../images/dist/home-hero__image.png)
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+        z-index: -1
+    &__counter-wrapper
+        background: rgba(255, 255, 255, 0.17)
+        width: fit-content
+        z-index: 1
+        position: relative
+        border-radius: 20px
+    &__counter-wrapper--first
+        padding: 20px 30px
+        padding-right: 55px
+        height: fit-content
+    &__counter-wrapper--two
+        height: fit-content
+        padding: 20px 30px        
+    &__counter
+        font-size: 40px
+        font-weight: 600
+        line-height: 40px
+        position: relative
+        z-index: 1
+    &__counter-title
+        z-index: 1
+        position: relative
+        text-transform: uppercase
+        font-size: 13px
+    &__post-title
+        position: relative
+        z-index: 1
+        font-size: 16px
+        line-height: 29px
+        font-weight: 400
+        letter-spacing: 0.5
+        opacity: 0.5
+    &__btn--green
+        margin-top: 50px
+        margin-bottom: 200px
+        background-color: $green
+        min-width: 200px
+        height: 70px
+    &__btn--black
+        margin-top: 50px
+        margin-bottom: 200px
+        background-color: rgba(255, 255, 255, 0.17)
+        min-width: 200px
+        height: 70px
+#counter-1
+    color: $yellow
+#counter-2
+    color: $red
+@keyframes show
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+@include media-breakpoint-up(lg)
+    .home-hero
+        &__counter-wrapper--first
+            margin-bottom: 20px
+@include media-breakpoint-down(md)
+    .home-hero
+        &__title
+            font-size: 140px
+            line-height: 130px
+            margin-bottom: 20px
+        &__post-title
+            display: block
+            margin-top: 20px
+        &__btn--green
+            margin-bottom: 0px
+            margin-top: 20px
+        &__btn--black
+            margin-top: 25px
+            margin-bottom: 50px
+        &__counter-wrapper--first
+            margin-right: 20px
+@include media-breakpoint-only(xs)
+    .home-hero
+        &__title
+            font-size: 100px
+            line-height: 150px
